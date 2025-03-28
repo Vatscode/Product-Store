@@ -4,6 +4,7 @@ import morgan from "morgan";
 import cors from"cors";
 import dotenv from "dotenv";
 
+import productRoutes from "./routes/productRoutes.js"
 
 dotenv.config();
 
@@ -19,25 +20,7 @@ app.use(helmet()); // a middleware to secure and protect the application by sett
 app.use(morgan("dev")); //log the request
 
 
-app.get("/api/products", (req, res) => {
-    //GET ALL PRODUCTS FROM DB
-    res.status(200).json({
-        success: true,
-        data: [
-            {id: 1, name: "Product 1"},
-            {id: 2, name: "Product 2"},
-            {id: 3, name: "Product 3"},
-            
-            {id: 4, name: "Product 4"},
-            
-
-
-        ],
-            
-});
-
-
-});
+app.get("/api/products", productRoutes);
 
 app.listen(3000, () =>{
     console.log("Server is running on port " + PORT);

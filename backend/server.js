@@ -18,7 +18,13 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/products", productRoutes);
 
-app.use(helmet());
+// Disable CSP temporarily
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
+
 app.use(morgan("dev"));
 
 // Fix for __dirname in ES modules

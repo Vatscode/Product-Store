@@ -65,7 +65,7 @@ npm run dev
 
 ### 1. **Backend Deployment on Render**
 
-1. **Sign up on Render**: [Vercel Sign Up](https://render.com).
+1. **Sign up on Render**: [Render Sign Up](https://render.com).
 2. **Link GitHub Repo**: Create a new project and link your backend repository.
 3. **Set Environment Variables**:
    - Add the following in Render settings:

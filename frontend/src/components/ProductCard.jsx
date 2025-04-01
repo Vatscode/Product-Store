@@ -2,7 +2,7 @@ import React from 'react'
 
 import { EditIcon, Trash2Icon } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useProductStore } from "../store/useProductStore";
+import { useProductStore } from "../store/useProductStore.js";
 
 function ProductCard({ product }) {
   const { deleteProduct } = useProductStore();

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import { DollarSignIcon, ImageIcon, Package2Icon, PlusCircleIcon } from "lucide-react";
-import { useProductStore } from "../store/useProductStore";
+import { useProductStore } from "../store/useProductStore.js";
 
 function AddProductModal() {
   const { addProduct, formData, setFormData, loading } = useProductStore();
@@ -9,14 +9,17 @@ function AddProductModal() {
     <dialog id="add_product_modal" className="modal">
       <div className="modal-box">
         {/* CLOSE BUTTON */}
-        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" data-dismiss="modal">
+        <button
+          type="button"
+          className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+          onClick={() => document.getElementById("add_product_modal").close()}
+        >
           X
         </button>
 
         {/* MODAL HEADER */}
         <h3 className="font-bold text-xl mb-8">Add New Product</h3>
 
-        {/* MAIN FORM */}
         <form onSubmit={addProduct} className="space-y-6">
           <div className="grid gap-6">
             {/* PRODUCT NAME INPUT */}
@@ -81,7 +84,13 @@ function AddProductModal() {
 
           {/* MODAL ACTIONS */}
           <div className="modal-action">
-            <button type="button" className="btn btn-ghost" data-dismiss="modal">Cancel</button>
+            <button
+              type="button"
+              className="btn btn-ghost"
+              onClick={() => document.getElementById("add_product_modal").close()}
+            >
+              Cancel
+            </button>
             <button
               type="submit"
               className="btn btn-primary min-w-[120px]"
@@ -101,9 +110,13 @@ function AddProductModal() {
       </div>
 
       {/* BACKDROP */}
-      <div className="modal-backdrop" onClick={() => document.getElementById('add_product_modal').close()}>
-        <button>Close</button>
-      </div>
+      <button
+        type="button"
+        className="modal-backdrop"
+        onClick={() => document.getElementById("add_product_modal").close()}
+      >
+        close
+      </button>
     </dialog>
   );
 }

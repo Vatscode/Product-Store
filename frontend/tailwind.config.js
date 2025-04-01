@@ -1,9 +1,10 @@
+// tailwind.config.js
 import daisyui from 'daisyui';
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
+    "./index.html", // Ensure this points to your HTML file
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
@@ -27,6 +28,5 @@ export default {
       "dracula",
     ],
   },
+  // ... existing code ...
 };
-
-//hot-toast:notification,react-router-dom: for navigation (links,pages) axios: fetch data,zustand package: for global state,lucide-react for icons 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect } from "react";
 import { useProductStore } from "../store/useProductStore";
 import { PackageIcon, PlusCircleIcon, RefreshCwIcon } from "lucide-react";
@@ -58,4 +59,4 @@ function HomePage() {
     </main>
   );
 }
-export default HomePage
+export default HomePage;

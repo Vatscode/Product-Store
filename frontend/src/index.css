@@ -1,3 +1,12 @@
+/* index.css or tailwind.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Make sure this is in your global styles */
+@layer base {
+  html {
+    /* This will allow themes to be applied via data-theme */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}

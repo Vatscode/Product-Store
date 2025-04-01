@@ -2,13 +2,14 @@ import React from 'react';
 import { Link, useLocation } from "react-router-dom";
 import { ShoppingBagIcon, ShoppingCartIcon } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
-import { useProductStore } from "../store/useProductStore";
+import { useProductStore } from "../store/useProductStore.js";
+import { useThemeStore } from '../store/useThemeStore.js';
 
 function Navbar() {
-  const { pathname } = useLocation(); // Corrected
+  const { pathname } = useLocation();
   const isHomePage = pathname === "/";
 
-  const { products } = useProductStore(); // Assumes products is an array
+  const { products } = useProductStore();
 
   return (
     <div className="bg-base-100/80 backdrop-blur-lg border-b border-base-content/10 sticky top-0 z-50">
@@ -18,12 +19,12 @@ function Navbar() {
           <div className="flex-1 lg:flex-none">
             <Link to="/" className="hover:opacity-80 transition-opacity">
               <div className="flex items-center gap-2">
-                <ShoppingCartIcon className="w-6 h-6 text-primary" />
+                <ShoppingCartIcon className="size-9 text-primary" />
                 <span
                   className="font-semibold font-mono tracking-widest text-2xl 
                     bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
                 >
-                  EASYSTORE
+                  EASYSHOPSTORE
                 </span>
               </div>
             </Link>
@@ -36,9 +37,9 @@ function Navbar() {
             {isHomePage && (
               <div className="indicator">
                 <div className="p-2 rounded-full hover:bg-base-200 transition-colors">
-                  <ShoppingBagIcon className="w-5 h-5" />
+                  <ShoppingBagIcon className="size-5" />
                   <span className="badge badge-sm badge-primary indicator-item">
-                    {products?.length ?? 0}
+                    {products.length}
                   </span>
                 </div>
               </div>
@@ -49,5 +50,4 @@ function Navbar() {
     </div>
   );
 }
-
 export default Navbar;

@@ -63,18 +63,18 @@ npm run dev
 
 ## 🚀 Deployment
 
-### 1. **Backend Deployment on Vercel**
+### 1. **Backend Deployment on Render**
 
-1. **Sign up on Vercel**: [Vercel Sign Up](https://vercel.com/signup).
+1. **Sign up on Render**: [Vercel Sign Up](https://render.com).
 2. **Link GitHub Repo**: Create a new project and link your backend repository.
 3. **Set Environment Variables**:
-   - Add the following in Vercel settings:
+   - Add the following in Render settings:
      - `PORT=3000`
      - `PGUSER`, `PGPASSWORD`, `PGHOST`, `PGDATABASE`
      - `ARCJET_KEY`, `ARCJET_ENV=development`
-4. **Deploy**: Vercel automatically deploys your backend.
 
-### 2. **Frontend Deployment on Vercel**
+
+### 2. **Frontend Deployment on Render**
 
 1. **Build the Project**:
    ```bash
